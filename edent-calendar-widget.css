@@ -1,0 +1,16 @@
+.archive-calendar{
+	font-size:0.7em;
+	background-color:#505050;
+	color:#DEDEDE;
+	border:0.1em solid black;
+	padding:1em;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%
+}
+
+.archive-calendar td{
+	border:1px solid black;
+	padding:0.5em;
+	background-color:#DCCDFF
+}
