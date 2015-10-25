@@ -99,7 +99,7 @@ class edent_calendar_widget extends WP_Widget
 			//  We start without a year
 			$current_year = "";
 
-			//  Itterate through the results, month by month
+			//  Iterate through the results, month by month
 			foreach ($results as $result)
 			{
 				//  For the very first result
@@ -153,7 +153,6 @@ class edent_calendar_widget extends WP_Widget
 			echo $args['after_widget'];
 		}
 	}
-
 			
 	// Widget Backend
 	public function form( $instance )
@@ -199,7 +198,7 @@ function generate_archive_calendar_table($calendar, $year)
 
 	//  Keep track of which month we're in.  1 == Jan, 2 == Feb, etc
 	$month_count = 0;
-	//  Itterate through the calendar
+	//  Iterate through the calendar
 	foreach ($calendar as $month)
 	{
 		$month_count++;
