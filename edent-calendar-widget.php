@@ -2,6 +2,7 @@
 /*
 Plugin Name: Edent's Archive Calendar Widget
 Description: A nice table layout for long archives
+Version: 0.1
 */
 /* Start Adding Functions Below this Line */
 
