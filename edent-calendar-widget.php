@@ -25,7 +25,7 @@ class edent_calendar_widget extends WP_Widget
 
 	// Creating widget front-end
 	// This is where the action happens
-	public function widget($args = '', $instance = '')
+	public function widget($args = '')
 	{
 		//	Database setup
 		global $wpdb;
@@ -260,8 +260,7 @@ function generate_archive_calendar_table($calendar, $year)
 		if (12 == $month_count)
 		{
 		  $table .= 	"</tbody>
-					</table>
-					<br/>";
+					</table>&nbsp;";
 		}
 	}
 

@@ -1,17 +1,8 @@
 .edent-archive-calendar{
 	color:#FFFA63;
-	background-color:#402A8D;
-
 	font-size:1em;
-
-	border:0.1em solid black;
-	padding:1em;
-	margin-left:auto;
-	margin-right:auto;
 	text-align: center;
-	width:100%;
-
-	table-layout:fixed;
+	display: inline-table !important;
 }
 
 .edent-archive-calendar td{
