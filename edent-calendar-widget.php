@@ -25,7 +25,7 @@ class edent_calendar_widget extends WP_Widget
 
 	// Creating widget front-end
 	// This is where the action happens
-	public function widget($args = '')
+	public function widget($args = '', $instance)
 	{
 		//	Database setup
 		global $wpdb;
