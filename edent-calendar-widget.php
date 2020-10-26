@@ -44,7 +44,7 @@ class edent_calendar_widget extends WP_Widget
 				ORDER BY post_date ASC
 				LIMIT 256";
 
-		//	Set up cacheing so we don't call this every time				
+		//	Set up cacheing so we don't call this every time
 		$key = md5( $query );
 		$key = "wp_get_archives:$key:$last_changed";
 		if ( ! $results = wp_cache_get( $key, 'posts' ) )
@@ -136,12 +136,12 @@ class edent_calendar_widget extends WP_Widget
 					$month_array[$result->month] = $result->posts;
 				}
 			}
-		
+
 			//  Generate the table for the previous year
 			$table_output =  generate_archive_calendar_table($month_array,$current_year) . $table_output;
 			// $table_output =  hello() . $table_output;
 			$output .= $table_output;
-			
+
 			extract($args);
 			$title = apply_filters(	'widget_title',
 									empty($instance['title']) ? __('Archives') : $instance['title'],
@@ -154,7 +154,7 @@ class edent_calendar_widget extends WP_Widget
 			echo $args['after_widget'];
 		}
 	}
-			
+
 	// Widget Backend
 	public function form( $instance )
 	{
@@ -177,7 +177,7 @@ class edent_calendar_widget extends WP_Widget
 	</p>
 	<?php
 	}
-		
+
 	// Updating widget replacing old instances with new
 	public function update( $new_instance, $old_instance )
 	{
@@ -218,7 +218,7 @@ function generate_archive_calendar_table($calendar, $year)
 			//  The link will be to "/YYYY/MM/"
 			$url = get_month_link( $year, $month_count );
 		}
-	
+
 		//  Start the table at January
 		if (1 == $month_count)
 		{
@@ -246,8 +246,8 @@ function generate_archive_calendar_table($calendar, $year)
 		} else {
 			 $table .= 				"{$month_text}<br/>&nbsp;";
 		}
-		
-		//  Close the cell				
+
+		//  Close the cell
 		$table .=  				"</td>";
 
 		//  If this is 3rd, 6th, 9th, or 12th month, close the row
@@ -273,11 +273,11 @@ function generate_archive_calendar_table($calendar, $year)
  */
 function edent_calendar_widget_style()
 {
-	wp_enqueue_style( 'style-name', 'edent-calendar-widget.css' );
+	wp_enqueue_style( 'style-name', 'edent-calendar-widget.css?cache=2019-03-30' );
 }
 
 function register_edent_calendar_widget_style() {
-	wp_register_style( 'edent_calendar_widget_style', plugins_url('/edent-calendar-widget.css', __FILE__), false, '1.0.0', 'all' );
+	wp_register_style( 'edent_calendar_widget_style', plugins_url('/edent-calendar-widget.css', __FILE__), false, '1.0.4', 'all' );
 }
 
 
