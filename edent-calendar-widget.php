@@ -46,6 +46,7 @@ class edent_calendar_widget extends WP_Widget
 
 		//	Set up cacheing so we don't call this every time
 		$key = md5( $query );
+		$last_changed = wp_cache_get_last_changed( 'posts' );
 		$key = "wp_get_archives:$key:$last_changed";
 		if ( ! $results = wp_cache_get( $key, 'posts' ) )
 		{
