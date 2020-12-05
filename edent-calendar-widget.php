@@ -243,9 +243,9 @@ function generate_archive_calendar_table($calendar, $year)
 		$table .= 				"<td>";
 		if ($number_of_posts > 0)
 		{
-			$table .= 				"<a href='$url'>{$month_text}<br/>{$posts_text}</a>";
+			$table .= 				"<a href='$url'>{$month_text}&#x0A;{$posts_text}</a>";
 		} else {
-			 $table .= 				"{$month_text}<br/>&nbsp;";
+			 $table .= 				"{$month_text}&#x0A;&nbsp;";
 		}
 
 		//  Close the cell

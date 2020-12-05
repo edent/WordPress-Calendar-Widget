@@ -14,6 +14,7 @@
 	padding:0.5em;
 
 	word-wrap:break-word;
+	white-space: break-spaces;
 }
 
 .edent-archive-calendar a {
