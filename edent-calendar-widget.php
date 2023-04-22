@@ -31,7 +31,7 @@ class edent_calendar_widget extends WP_Widget
 		global $wpdb;
 
 		//	This widget will display HTML, contained in $output
-		$output = "";
+		$output = '<div class="edent-calendars">';
 
 		//	Generates a list of YYYY MM POSTCOUNT
 		//	Only selects published posts
@@ -124,8 +124,7 @@ class edent_calendar_widget extends WP_Widget
 				elseif ($result->year != $current_year) //  We've encountered a new year
 				{
 					//  Generate the table for the previous year
-					$table_output =  generate_archive_calendar_table($month_array,$current_year) . $table_output;
-					// $table_output =  hello() . $table_output;
+					$table_output =  generate_archive_calendar_table($month_array, $current_year) . $table_output;
 
 					//  Set the current year
 					$current_year = $result->year;
@@ -140,8 +139,9 @@ class edent_calendar_widget extends WP_Widget
 
 			//  Generate the table for the previous year
 			$table_output =  generate_archive_calendar_table($month_array,$current_year) . $table_output;
-			// $table_output =  hello() . $table_output;
+
 			$output .= $table_output;
+			$output .= "</div>";
 
 			extract($args);
 			$title = apply_filters(	'widget_title',
@@ -196,15 +196,16 @@ function generate_archive_calendar_table($calendar, $year)
 	global $wp_locale;
 
 	//  Set up the output
-	$table = "";
+	$table = '<div class="edent-calendar">';
+	$table .= "<div class='edent-calendar-year' id='edent-calendar-{$year}'>{$year}</div>";
 
+	//  Iterate through the calendar
 	//  Keep track of which month we're in.  1 == Jan, 2 == Feb, etc
 	$month_count = 0;
-	//  Iterate through the calendar
+
 	foreach ($calendar as $month)
 	{
 		$month_count++;
-
 		//  The number of posts, e.g. "7 posts"
 		$number_of_posts = $calendar[$month_count];
 		//  Set up the link to the archive
@@ -218,53 +219,13 @@ function generate_archive_calendar_table($calendar, $year)
 		{
 			//  The link will be to "/YYYY/MM/"
 			$url = get_month_link( $year, $month_count );
-		}
-
-		//  Start the table at January
-		if (1 == $month_count)
-		{
-		  $table .= "<table class='edent-archive-calendar' id='edent-archive-calendar-{$year}'>
-				  		<thead>
-							<tr>
-								<th colspan='3'>{$year}</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>";
-		}
-
-		 //  New rows for Apr, Jul, Oct
-		if (4 == $month_count || 7 == $month_count || 10 == $month_count)
-		{
-		  $table .=			"<tr>";
-		}
-
-		//  Table cell with Month and Number of posts
-		$table .= 				"<td>";
-		if ($number_of_posts > 0)
-		{
-			$table .= 				"<a href='$url'>{$month_text}&#x0A;{$posts_text}</a>";
+			$table .= "<div class='edent-calendar-month'><a href='$url'>{$month_text}<br>{$posts_text}</a></div>";
 		} else {
-			 $table .= 				"{$month_text}&#x0A;&nbsp;";
+			 $table .="<div class='edent-calendar-month'>{$month_text}<br>&nbsp;</div>";
 		}
-
-		//  Close the cell
-		$table .=  				"</td>";
-
-		//  If this is 3rd, 6th, 9th, or 12th month, close the row
-		if (0 == $month_count%3)
-		{
-		  $table .=			"</tr>";
-		}
-
-		//  Close the table after December
-		if (12 == $month_count)
-		{
-		  $table .= 	"</tbody>
-					</table>&nbsp;";
-		}
+		
 	}
-
+	$table .= "</div>";
 	//  Send back the HTML of the table
 	return $table;
 }
@@ -274,7 +235,7 @@ function generate_archive_calendar_table($calendar, $year)
  */
 function edent_calendar_widget_style()
 {
-	wp_enqueue_style( 'style-name', 'edent-calendar-widget.css?cache=2019-03-30' );
+	wp_enqueue_style( 'style-name', 'edent-calendar-widget.css?cache=2023-04-22T10:10' );
 }
 
 function register_edent_calendar_widget_style() {

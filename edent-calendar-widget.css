@@ -20,3 +20,44 @@
 .edent-archive-calendar a {
 	color: #003366;
 }
+
+.edent-calendars {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.edent-calendar {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin: .5em;
+	border-radius: 0 !important;
+	font-size: .9em;
+	outline: 2px solid black;
+	color: #474863;
+}
+
+.edent-calendar a {
+	color: #003366;
+}
+
+.edent-calendar-year {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	text-align: center;
+	outline: 1px black solid;
+	border-radius: 0 !important;
+	font-weight: bold;
+	background: linear-gradient(to bottom right, #D66 0%, #A00 100%);
+	color: white;
+}
+
+.edent-calendar-month {
+	text-align: center;
+	padding: .75em .25em;
+	outline: 1px black solid;
+	border-radius: 0 !important;
+	background-color: var(--color-brighten);
+}
+
