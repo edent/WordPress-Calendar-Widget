@@ -235,7 +235,7 @@ function generate_archive_calendar_table($calendar, $year)
  */
 function edent_calendar_widget_style()
 {
-	wp_enqueue_style( 'style-name', 'edent-calendar-widget.css?cache=2023-04-22T10:10' );
+	wp_enqueue_style( 'style-name', 'edent-calendar-widget.css?cache=2023-04-24T10:10' );
 }
 
 function register_edent_calendar_widget_style() {

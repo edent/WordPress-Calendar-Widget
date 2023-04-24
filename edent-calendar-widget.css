@@ -48,7 +48,6 @@
 	text-align: center;
 	outline: 1px black solid;
 	border-radius: 0 !important;
-	font-weight: bold;
 	background: linear-gradient(to bottom right, #D66 0%, #A00 100%);
 	color: white;
 }
