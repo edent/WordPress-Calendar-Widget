@@ -1,24 +1,8 @@
-.edent-archive-calendar{
-	color:#131313;
-	font-size:.9em;
-	text-align: center;
-	display: inline-table !important;
-	min-width: 256px;
-}
-
-.edent-archive-calendar td{
-	color: #474863;
-	/* background-color:#f3e5ab; */
-
-	border:1px solid black;
-	padding:0.5em;
-
-	word-wrap:break-word;
-	white-space: break-spaces;
-}
-
-.edent-archive-calendar a {
-	color: #003366;
+.edent-calendar-details, .edent-calendar-summary {
+	display: inline;
+	border: none;
+	padding: 0;
+	width: auto;
 }
 
 .edent-calendars {

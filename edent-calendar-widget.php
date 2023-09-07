@@ -31,7 +31,10 @@ class edent_calendar_widget extends WP_Widget
 		global $wpdb;
 
 		//	This widget will display HTML, contained in $output
-		$output = '<div class="edent-calendars">';
+
+		//	Start with a details / summary widget
+		$output  = '<details class="edent-calendar-summary"><summary class="edent-calendar-summary"><h2>🗓️ <a>Explore The Archives</a> 🗓️</h2></summary>';
+		$output .= '<div class="edent-calendars">';
 
 		//	Generates a list of YYYY MM POSTCOUNT
 		//	Only selects published posts
