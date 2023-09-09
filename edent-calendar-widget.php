@@ -145,6 +145,7 @@ class edent_calendar_widget extends WP_Widget
 
 			$output .= $table_output;
 			$output .= "</div>";
+			$output .= "</details>";
 
 			extract($args);
 			$title = apply_filters(	'widget_title',
