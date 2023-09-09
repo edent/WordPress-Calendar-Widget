@@ -33,7 +33,7 @@ class edent_calendar_widget extends WP_Widget
 		//	This widget will display HTML, contained in $output
 
 		//	Start with a details / summary widget
-		$output  = '<details class="edent-calendar-summary"><summary class="edent-calendar-summary"><h2>🗓️ <a>Explore The Archives</a> 🗓️</h2></summary>';
+		$output  = '<details class="edent-calendar-summary"><summary class="edent-calendar-summary"><h2>🗓️ <u>Explore The Archives</u> 🗓️</h2></summary>';
 		$output .= '<div class="edent-calendars">';
 
 		//	Generates a list of YYYY MM POSTCOUNT
