@@ -33,7 +33,7 @@ class edent_calendar_widget extends WP_Widget
 		//	This widget will display HTML, contained in $output
 
 		//	Start with a details / summary widget
-		$output  = '<details class="edent-calendar-summary"><summary class="edent-calendar-summary"><h2>🗓️ <u>Explore The Archives</u> 🗓️</h2></summary>';
+		$output  = '<details class="edent-calendar-summary"><summary class="edent-calendar-summary"><h2>🗓️ <u>Explore The Archives</u></h2></summary>';
 		$output .= '<div class="edent-calendars">';
 
 		//	Generates a list of YYYY MM POSTCOUNT
@@ -223,7 +223,7 @@ function generate_archive_calendar_table($calendar, $year)
 		{
 			//  The link will be to "/YYYY/MM/"
 			$url = get_month_link( $year, $month_count );
-			$table .= "<div class='edent-calendar-month'><a href='$url'>{$month_text}\n{$posts_text}</a></div>";
+			$table .= "<a class='edent-calendar-month' href='$url'>{$month_text}\n{$posts_text}</a>";
 		} else {
 			 $table .="<div class='edent-calendar-month'>{$month_text}\n&nbsp;</div>";
 		}
