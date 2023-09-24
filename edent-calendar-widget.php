@@ -201,7 +201,7 @@ function generate_archive_calendar_table($calendar, $year)
 
 	//  Set up the output
 	$table = '<div class="edent-calendar">';
-	$table .= "<div class='edent-calendar-year' id='edent-calendar-{$year}'>{$year}</div>";
+	$table .= "<time class='edent-calendar-year' id='edent-calendar-{$year}'>{$year}</time>";
 
 	//  Iterate through the calendar
 	//  Keep track of which month we're in.  1 == Jan, 2 == Feb, etc
