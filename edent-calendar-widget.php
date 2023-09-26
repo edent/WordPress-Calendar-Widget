@@ -200,7 +200,7 @@ function generate_archive_calendar_table($calendar, $year)
 	global $wp_locale;
 
 	//  Set up the output
-	$table = "<ul class='edent-calendar'>";
+	$table = "<li><ul class='edent-calendar'>";
 	$table .= "<li class='edent-calendar-year' id='edent-calendar-{$year}'>{$year}</li>";
 
 	//  Iterate through the calendar
@@ -228,7 +228,7 @@ function generate_archive_calendar_table($calendar, $year)
 			$table .= "<li class='edent-calendar-month'>{$month_text}\n&nbsp;</li>";
 		}		
 	}
-	$table .= "</ul>";
+	$table .= "</ul></li>";
 	//  Send back the HTML of the table
 	return $table;
 }
