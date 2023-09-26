@@ -34,7 +34,7 @@ class edent_calendar_widget extends WP_Widget
 
 		//	Start with a details / summary widget
 		$output  = '<details class="edent-calendar-summary"><summary class="edent-calendar-summary"><h2>🗓️ <u>Explore The Archives</u></h2></summary>';
-		$output .= '<div class="edent-calendars">';
+		$output .= '<ul class="edent-calendars">';
 
 		//	Generates a list of YYYY MM POSTCOUNT
 		//	Only selects published posts
@@ -144,7 +144,7 @@ class edent_calendar_widget extends WP_Widget
 			$table_output =  generate_archive_calendar_table($month_array,$current_year) . $table_output;
 
 			$output .= $table_output;
-			$output .= "</div>";
+			$output .= "</ul>";
 			$output .= "</details>";
 
 			extract($args);
@@ -172,7 +172,7 @@ class edent_calendar_widget extends WP_Widget
 	// Widget admin form
 	?>
 	<p>
-		<label for=  "<?php echo $this->get_field_id(   'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+		<label for=  "<?php echo $this->get_field_id(  'title' ); ?>"><?php _e( 'Title:' ); ?></label>
 		<input class="widefat"
 			   id=   "<?php echo $this->get_field_id(   'title' ); ?>"
 			   name= "<?php echo $this->get_field_name( 'title' ); ?>"
@@ -200,8 +200,8 @@ function generate_archive_calendar_table($calendar, $year)
 	global $wp_locale;
 
 	//  Set up the output
-	$table = '<div class="edent-calendar">';
-	$table .= "<time class='edent-calendar-year' id='edent-calendar-{$year}'>{$year}</time>";
+	$table = "<ul class='edent-calendar'>";
+	$table .= "<li class='edent-calendar-year' id='edent-calendar-{$year}'>{$year}</li>";
 
 	//  Iterate through the calendar
 	//  Keep track of which month we're in.  1 == Jan, 2 == Feb, etc
@@ -223,13 +223,12 @@ function generate_archive_calendar_table($calendar, $year)
 		{
 			//  The link will be to "/YYYY/MM/"
 			$url = get_month_link( $year, $month_count );
-			$table .= "<a class='edent-calendar-month' href='$url'>{$month_text}\n{$posts_text}</a>";
+			$table .= "<li class='edent-calendar-month'><a href='$url'>{$month_text}\n{$posts_text}</a></li>";
 		} else {
-			 $table .="<div class='edent-calendar-month'>{$month_text}\n&nbsp;</div>";
-		}
-		
+			$table .= "<li class='edent-calendar-month'>{$month_text}\n&nbsp;</li>";
+		}		
 	}
-	$table .= "</div>";
+	$table .= "</ul>";
 	//  Send back the HTML of the table
 	return $table;
 }
@@ -239,7 +238,7 @@ function generate_archive_calendar_table($calendar, $year)
  */
 function edent_calendar_widget_style()
 {
-	wp_enqueue_style( 'style-name', 'edent-calendar-widget.css?cache=2023-09-09T10:10' );
+	wp_enqueue_style( 'style-name', 'edent-calendar-widget.css?cache=2023-09-26T11:10' );
 }
 
 function register_edent_calendar_widget_style() {
