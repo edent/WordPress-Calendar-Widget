@@ -200,8 +200,9 @@ function generate_archive_calendar_table($calendar, $year)
 	global $wp_locale;
 
 	//  Set up the output
-	$table = "<li><ul class='edent-calendar'>";
-	$table .= "<li class='edent-calendar-year' id='edent-calendar-{$year}'>{$year}</li>";
+	$table = "<li>";
+	$table .=   "<time class='edent-calendar-year' id='edent-calendar-{$year}'>{$year}</time>";
+	$table .=   "<ul class='edent-calendar'>";
 
 	//  Iterate through the calendar
 	//  Keep track of which month we're in.  1 == Jan, 2 == Feb, etc
@@ -238,7 +239,7 @@ function generate_archive_calendar_table($calendar, $year)
  */
 function edent_calendar_widget_style()
 {
-	wp_enqueue_style( 'style-name', 'edent-calendar-widget.css?cache=2023-09-26T11:10' );
+	wp_enqueue_style( 'style-name', 'edent-calendar-widget.css?cache=2023-09-27T11:10' );
 }
 
 function register_edent_calendar_widget_style() {

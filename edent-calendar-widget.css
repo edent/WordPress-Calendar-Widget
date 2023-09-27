@@ -17,7 +17,7 @@
 .edent-calendar {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	margin: .5em;
+	margin: 0 .5em .5em .5em;
 	border-radius: 0 !important;
 	font-size: .9em;
 	outline: 2px solid black;
@@ -31,13 +31,13 @@
 }
 
 .edent-calendar-year {
-	grid-column-start: 1;
-	grid-column-end: 4;
-	text-align: center;
 	outline: 1px black solid;
 	border-radius: 0 !important;
 	background: linear-gradient(to bottom right, #D66 0%, #A00 100%);
 	color: white;
+	display: block;
+	margin-right: .4em;
+	margin-left: .4em;
 }
 
 .edent-calendar-month {
