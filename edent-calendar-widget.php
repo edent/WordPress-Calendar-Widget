@@ -153,8 +153,8 @@ class edent_calendar_widget extends WP_Widget
 									$instance, $this->id_base);
 
 			echo $args['before_widget'];
-			if ( ! empty( $title ) )
-				echo $args['before_title'] . $title . $args['after_title'];
+			// if ( ! empty( $title ) )
+			// 	echo $args['before_title'] . $title . $args['after_title'];
 			echo $output;
 			echo $args['after_widget'];
 		}
