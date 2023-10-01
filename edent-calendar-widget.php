@@ -202,7 +202,8 @@ function generate_archive_calendar_table($calendar, $year)
 	//  Set up the output
 	$table = "<li>";
 	$table .=   "<time class='edent-calendar-year' id='edent-calendar-{$year}'>{$year}</time>";
-	$table .=   "<ul class='edent-calendar'>";
+	$table .=   "<ul class='edent-calendar-months'>";
+	$table .=      "<li class='edent-calendar'>";
 
 	//  Iterate through the calendar
 	//  Keep track of which month we're in.  1 == Jan, 2 == Feb, etc
@@ -224,9 +225,9 @@ function generate_archive_calendar_table($calendar, $year)
 		{
 			//  The link will be to "/YYYY/MM/"
 			$url = get_month_link( $year, $month_count );
-			$table .= "<li class='edent-calendar-month'><a href='$url'>{$month_text}\n{$posts_text}</a></li>";
+			$table .= "<a class='edent-calendar-month' href='$url'>{$month_text}\n{$posts_text}</a>";
 		} else {
-			$table .= "<li class='edent-calendar-month'>{$month_text}\n&nbsp;</li>";
+			$table .= "<p class='edent-calendar-month'>{$month_text}\n&nbsp;</p>";
 		}		
 	}
 	$table .= "</ul></li>";
@@ -239,7 +240,7 @@ function generate_archive_calendar_table($calendar, $year)
  */
 function edent_calendar_widget_style()
 {
-	wp_enqueue_style( 'style-name', 'edent-calendar-widget.css?cache=2023-09-27T11:10' );
+	wp_enqueue_style( 'style-name', 'edent-calendar-widget.css?cache=2023-10-01T08:17' );
 }
 
 function register_edent_calendar_widget_style() {
