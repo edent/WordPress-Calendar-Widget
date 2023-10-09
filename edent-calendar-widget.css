@@ -18,12 +18,13 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	margin: 0 .5em .5em .5em;
-	border-radius: 0 !important;
 	font-size: .9em;
 	outline: 2px solid black;
 	color: #474863;
 	padding: 0;
 	list-style: none;
+	overflow: hidden;
+	border-radius: 0 0 1em 1em !important;
 }
 
 .edent-calendar a {
@@ -32,7 +33,7 @@
 
 .edent-calendar-year {
 	outline: 1px black solid;
-	border-radius: 0 !important;
+	border-radius: 0 1em 0 0 !important;
 	background: linear-gradient(to bottom right, #D66 0%, #A00 100%);
 	color: white;
 	display: block;
@@ -53,4 +54,3 @@
 	white-space: pre;
 	margin: 0;
 }
-
