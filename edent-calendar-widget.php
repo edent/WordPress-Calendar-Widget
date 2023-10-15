@@ -225,7 +225,7 @@ function generate_archive_calendar_table($calendar, $year)
 		{
 			//  The link will be to "/YYYY/MM/"
 			$url = get_month_link( $year, $month_count );
-			$table .= "<a class='edent-calendar-month' href='$url'>{$month_text}\n {$posts_text} </a>";
+			$table .= "<a class='edent-calendar-month' href='$url'>{$month_text}\n {$posts_text} </a>&#10;";
 		} else {
 			$table .= "<p class='edent-calendar-month'>{$month_text}\n&nbsp;</p>";
 		}		
